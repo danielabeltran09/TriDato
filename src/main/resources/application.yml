@@ -1,0 +1,26 @@
+#
+# User org.mysql.Driver for MySQL Database
+#
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/event?autoReconnect=true&useSSL=false
+    username: root
+    password: null
+    driver-class-name: com.mysql.jdbc.Driver
+
+# Default Configuration
+# Hibernate must not generate the schema
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+
+
+  liquibase:
+    change-log: classpath:/liquibase/master.xml
