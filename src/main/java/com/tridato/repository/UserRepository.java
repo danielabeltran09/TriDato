@@ -1,6 +1,6 @@
-package event.server.Event.repository;
+package com.tridato.repository;
 
-import event.server.Event.Domain.User;
+import com.tridato.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

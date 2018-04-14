@@ -1,4 +1,4 @@
-package com.tridato.tridato;
+package com.tridato;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
