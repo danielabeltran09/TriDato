@@ -1,5 +1,5 @@
 rootProject.name = 'tridato'
-include 'tridato-eureka-server'
+include 'tridato-eureka'
 include 'tridato-liquibase'
 
 
