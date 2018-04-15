@@ -6,6 +6,8 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
  *
+ * @author Camilo Andres White Rivera
+ * @author Daniela
  */
 @EnableEurekaServer
 @SpringBootApplication
