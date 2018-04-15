@@ -50,7 +50,7 @@ subprojects {
 	}
 }
 
-project(":tridato-eureka") {
+project(":tridato-eureka-server") {
 	dependencies {
 		compile 'org.springframework.cloud:spring-cloud-starter-eureka-server'
 	}
