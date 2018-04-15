@@ -42,9 +42,16 @@ project(":tridato-eureka") {
 	}
 }
 
+project(":tridato-service") {
+    dependencies {
+        compile('org.springframework.boot:spring-boot-starter-web')
+    }
+}
+
 project(":tridato-liquibase") {
 	dependencies {
-		runtime('mysql:mysql-connector-java')
+        compile('org.springframework.boot:spring-boot-starter-web')
+        runtime('mysql:mysql-connector-java')
 		compile('org.liquibase:liquibase-core')
 	}
 }
