@@ -1,0 +1,12 @@
+#
+# User org.mysql.Driver for MySQL Database
+#
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/tridato?autoReconnect=true&useSSL=false
+    username: root
+    password: vertical
+    driver-class-name: com.mysql.jdbc.Driver
+  liquibase:
+      change-log: classpath:liquibase/master.xml
