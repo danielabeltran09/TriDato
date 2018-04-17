@@ -49,6 +49,14 @@ project(":tridato-service") {
     }
 }
 
+project(":tridato-co-police") {
+	dependencies {
+		compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
+		compile('org.springframework.boot:spring-boot-starter-web')
+		compile('org.springframework.boot:spring-cloud-starter-ribbon')
+	}
+}
+
 project(":tridato-liquibase") {
 	dependencies {
         compile('org.springframework.boot:spring-boot-starter-web')

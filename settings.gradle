@@ -2,4 +2,5 @@ rootProject.name = 'tridato'
 include 'tridato-eureka'
 include 'tridato-liquibase'
 include 'tridato-service'
+include 'tridato-co-police'
 
