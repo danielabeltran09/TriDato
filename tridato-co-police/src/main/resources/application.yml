@@ -3,7 +3,7 @@ spring:
     name: tridato-co-police
 
 server:
-  port: 8073
+  port: 0
 
 eureka:
   client:
@@ -13,10 +13,3 @@ eureka:
     fetchRegistry: true
   instance:
     hostname: localhost
-
-tridato-co-police:
-  ribbon:
-    eureka:
-      enabled: true
-    listOfServers: localhost:50001,localhost:50002,localhost:50003
-    ServerListRefreshInterval: 15000
