@@ -13,3 +13,4 @@ eureka:
     fetchRegistry: true
   instance:
     hostname: localhost
+    instanceId: ${spring.application.name}:${spri‌​ng.application.insta‌​nce_id:${random.valu‌​e}}

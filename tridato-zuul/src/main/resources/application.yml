@@ -16,3 +16,9 @@ zuul:
     users:
       path: /police/**
       serviceId: tridato-co-police
+
+tridato-co-police:
+  ribbon:
+    eureka:
+      enabled: true
+    ServerListRefreshInterval: 1000
