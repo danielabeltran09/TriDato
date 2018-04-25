@@ -36,23 +36,23 @@ subprojects {
 
 }
 
+project(":td-commons") {
+	dependencies {
+		compile('net.sourceforge.tess4j:tess4j:3.2.1')
+	}
+}
+
 project(":tridato-eureka") {
 	dependencies {
         compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
 	}
 }
 
-project(":tridato-service") {
-    dependencies {
-		compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
-        compile('org.springframework.boot:spring-boot-starter-web')
-    }
-}
-
 project(":tridato-co-police") {
 	dependencies {
 		compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
 		compile('org.springframework.boot:spring-boot-starter-web')
+		compile project(':td-commons')
 	}
 }
 

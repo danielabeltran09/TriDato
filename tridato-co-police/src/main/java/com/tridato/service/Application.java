@@ -1,6 +1,7 @@
 package com.tridato.service;
 
 
+import com.trudato.commons.util.TextReader;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
@@ -16,6 +17,9 @@ import java.util.Random;
 public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+
+        String as = TextReader.getImgText("tridato-co-police/src/captcha.jpg");
+        System.out.println(as);
+        //SpringApplication.run(Application.class, args);
     }
 }
