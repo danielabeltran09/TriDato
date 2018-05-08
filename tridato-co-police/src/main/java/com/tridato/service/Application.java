@@ -3,6 +3,7 @@ package com.tridato.service;
 
 import com.tridato.service.model.PoliceStartSession;
 import com.trudato.commons.util.TextReader;
+import io.netty.handler.codec.http.HttpContent;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -91,7 +92,7 @@ public class Application {
         // Ejecutamos la segunda vez para pasar la primera pantalla y llegar a los antecedentes
         Connection.Response homePage = Jsoup.connect("https://antecedentes.policia.gov.co:7005/WebJudicial/index.xhtml")
                 .cookies(cookies)
-                .header("Content-Type","application/x-www-form-urlencoded")
+                .header(HttpHeaders.CONTENT_TYPE,"application/x-www-form-urlencoded")
                 .data(formData)
                 .method(Connection.Method.POST)
                 .execute();
@@ -106,7 +107,7 @@ public class Application {
         FileOutputStream out = (new FileOutputStream(new java.io.File("tessdata/captcha.jpg")));
         out.write(resultImageResponse.bodyAsBytes());  // resultImageResponse.body() is where the image's contents are.
         out.close();
-        final String textInCaptcha = TextReader.getImgText(ImageIO.read(captchaImage));
+        final String textInCaptcha = TextReader.getImgText(ImageIO.read(captchaImage)).trim();
 
         // Llamamos al fin la pagina de los antecendentes
         HashMap<String, String> formDataAntencedentes = new HashMap<>();
@@ -119,17 +120,12 @@ public class Application {
 
         Connection.Response antecedentesPage = Jsoup.connect("https://antecedentes.policia.gov.co:7005/WebJudicial/antecedentes.xhtml")
                 .cookies(cookies)
-                .header("Content-Type","application/x-www-form-urlencoded")
+                .header(HttpHeaders.CONTENT_TYPE,"application/x-www-form-urlencoded")
                 .data(formDataAntencedentes)
                 .method(Connection.Method.POST)
                 .execute();
 
-        Connection.Response response = Jsoup.connect("https://antecedentes.policia.gov.co:7005/WebJudicial/formAntecedentes.xhtml")
-                .cookies(cookies)
-                .method(Connection.Method.GET)
-                .execute();
-
-        System.out.println(response.body());
+        System.out.println(antecedentesPage.body());
         System.out.println(textInCaptcha);
         System.out.println();
     }
