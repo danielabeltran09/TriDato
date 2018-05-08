@@ -4,6 +4,7 @@ import net.sourceforge.tess4j.ITesseract;
 import net.sourceforge.tess4j.Tesseract;
 import net.sourceforge.tess4j.TesseractException;
 
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.logging.Logger;
 
@@ -38,6 +39,24 @@ public final class TextReader {
         try {
 
             return instance.doOCR(file);
+        } catch (TesseractException e) {
+
+            e.getMessage();
+            return "Error while reading image";
+        }
+    }
+
+    /**
+     * Gets the text contained on an image
+     * @param image The buffered image
+     * @return A string containing the text in the image
+     */
+    public static String getImgText(final BufferedImage image) {
+
+        final ITesseract instance = new Tesseract();
+        try {
+
+            return instance.doOCR(image);
         } catch (TesseractException e) {
 
             e.getMessage();
