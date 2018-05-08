@@ -6,7 +6,6 @@ import net.sourceforge.tess4j.TesseractException;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.util.logging.Logger;
 
 /**
  * Utility to read text from images
