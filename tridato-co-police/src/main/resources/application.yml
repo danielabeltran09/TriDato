@@ -14,3 +14,11 @@ eureka:
   instance:
     hostname: localhost
     instanceId: ${spring.application.name}:${spri‌​ng.application.insta‌​nce_id:${random.valu‌​e}}
+
+trudato:
+  co:
+    police:
+      url:
+        index: https://antecedentes.policia.gov.co:7005/WebJudicial/index.xhtml
+        captcha: https://antecedentes.policia.gov.co:7005/WebJudicial/captcha.jpg
+        antecedentes: https://antecedentes.policia.gov.co:7005/WebJudicial/antecedentes.xhtml

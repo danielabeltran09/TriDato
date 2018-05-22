@@ -1,25 +1,28 @@
 package com.tridato.service;
 
 
+import com.tridato.service.constants.StringConstants;
 import com.trudato.commons.util.TextReader;
+import org.apache.commons.lang.StringUtils;
+import org.jsoup.Connection;
+import org.jsoup.Jsoup;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import javax.imageio.ImageIO;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.util.HashMap;
 
 @EnableEurekaClient
 @SpringBootApplication
 public class Application {
 
     public static void main(String[] args) {
-
-        String as = TextReader.getImgText("tridato-co-police/src/captcha.jpg");
-        System.out.println(as);
-        //SpringApplication.run(Application.class, args);
+        SpringApplication.run(Application.class, args);
     }
 }
