@@ -6,7 +6,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/tridato?autoReconnect=true&useSSL=false
     username: root
-    password: vertical
+    password: gjwQbdRD4k;t
     driver-class-name: com.mysql.jdbc.Driver
   liquibase:
       change-log: classpath:liquibase/master.xml

@@ -5,4 +5,6 @@ include 'tridato-service'
 include 'tridato-co-police'
 include 'tridato-zuul'
 include 'td-commons'
+include 'tridato-co-mintransporte'
+include 'tridato-co-aguascalientes'
 
