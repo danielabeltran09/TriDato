@@ -1,18 +1,19 @@
 package sipso
 
 import (
-	"github.com/PuerkitoBio/goquery"
 	"log"
 	"net/http"
 	"strings"
+
+	"github.com/PuerkitoBio/goquery"
 )
 
 type Citizen struct {
 	Curp             string `json:"curp"`
 	FirstName        string `json:"first_name"`
 	LastName         string `json:"last_name"`
-	Birthdate        string `json:"birthdate"`
-	BirthInstitution string `json: "birthInstitution"`
+	Birthdate        string `json:"birth_date"`
+	BirthInstitution string `json: "birth_place"`
 }
 
 func GetData(curpID string) Citizen {
@@ -44,6 +45,5 @@ func GetData(curpID string) Citizen {
 	})
 
 	newCitizen := Citizen{citizenData[1], citizenData[4], citizenData[2] + " " + citizenData[3], citizenData[6], citizenData[7]}
-	//	fmt.Printf("%+v\n", newCitizen )
 	return newCitizen
 }
