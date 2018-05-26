@@ -6,7 +6,7 @@ include 'tridato-co-police'
 include 'tridato-zuul'
 include 'td-commons'
 include 'tridato-co-mintransporte'
-include 'tridato-co-aguascalientes'
+include 'tridato-mx-aguascalientes'
 include 'td-mx-sipso'
 include 'tridato-mock-response'
 

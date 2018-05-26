@@ -46,7 +46,7 @@ tridato-co-mintransporte:
     eureka:
       enabled: true
     ServerListRefreshInterval: 1000
-tridato-co-aguascalientes:
+tridato-mx-aguascalientes:
   ribbon:
     eureka:
       enabled: true
