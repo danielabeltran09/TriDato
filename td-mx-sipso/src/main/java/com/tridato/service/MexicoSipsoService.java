@@ -22,11 +22,15 @@ import java.io.IOException;
 @RequestMapping("/mexican-sipso")
 public class MexicoSipsoService {
 
-    @Autowired
     private Environment environment;
 
     @Value("${trudato.mx.sipso.url.index}")
     private String index;
+
+    @Autowired
+    public MexicoSipsoService(Environment environment) {
+        this.environment = environment;
+    }
 
     @GetMapping("/health")
     public ResponseEntity health() {

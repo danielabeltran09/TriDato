@@ -19,8 +19,6 @@ version = '0.0.1-SNAPSHOT'
 subprojects {
 
 	apply plugin: 'java'
-	apply plugin: 'eclipse'
-	apply plugin: 'org.springframework.boot'
 	apply plugin: 'io.spring.dependency-management'
 
 	repositories {
@@ -52,6 +50,7 @@ project(":tridato-eureka") {
 }
 
 project(":tridato-co-police") {
+	apply plugin: 'org.springframework.boot'
 	dependencies {
 		compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
 		compile('org.springframework.boot:spring-boot-starter-web')
@@ -79,6 +78,7 @@ project(":tridato-co-aguascalientes") {
 }
 
 project(":td-mx-sipso") {
+	apply plugin: 'org.springframework.boot'
 	dependencies {
 		compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
 		compile('org.springframework.boot:spring-boot-starter-web')
@@ -88,17 +88,10 @@ project(":td-mx-sipso") {
 }
 
 project(":tridato-zuul") {
+	apply plugin: 'org.springframework.boot'
 	dependencies {
 		compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
 		compile('org.springframework.boot:spring-boot-starter-web')
 		compile('org.springframework.cloud:spring-cloud-starter-netflix-zuul')
-	}
-}
-
-project(":tridato-liquibase") {
-	dependencies {
-        compile('org.springframework.boot:spring-boot-starter-web')
-        runtime('mysql:mysql-connector-java')
-		compile('org.liquibase:liquibase-core')
 	}
 }
