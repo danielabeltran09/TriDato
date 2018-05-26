@@ -41,14 +41,12 @@ public class ColombianPoliceService {
     @GetMapping("/query/{id}")
     public String query(@PathVariable("id") final String id) throws IOException {
 
-        HashMap<String, String> cookies = new HashMap<>();
-        HashMap<String, String> formData = new HashMap<>();
+        final Connection.Response loginForm = Jsoup.connect(index).execute();
 
-        // Ejecutamos la primera vez para obtener la sesion
-        Connection.Response loginForm = Jsoup.connect(index).execute();
-
+        final HashMap<String, String> cookies = new HashMap<>();
         cookies.putAll(loginForm.cookies());
 
+        final HashMap<String, String> formData = new HashMap<>();
         formData.put(StringConstants.FormParameters.JAVAX_FACES_PARTIAL_AJAX, StringConstants.FormValues.TRUE);
         formData.put(StringConstants.FormParameters.JAVAX_FACES_SOURCE, StringConstants.FormValues.CONTINUAR_BTN);
         formData.put(StringConstants.FormParameters.JAVAX_FACES_PARTIAL_EXECUTE, StringConstants.FormValues.ALL);
@@ -57,7 +55,6 @@ public class ColombianPoliceService {
         formData.put(StringConstants.FormParameters.ACEPTA_OPTION, StringConstants.FormValues.TRUE);
         formData.put(StringConstants.FormParameters.JAVAX_FACES_VIEW_STATE, StringConstants.FormValues.VIEW_STATE_CONSTANT);
 
-        // Ejecutamos la segunda vez para pasar la primera pantalla y llegar a los antecedentes
         Jsoup.connect(index)
                 .cookies(cookies)
                 .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_FORM_URLENCODED_VALUE)
