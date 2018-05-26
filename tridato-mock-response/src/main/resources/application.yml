@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: tridato-mock-response
+server:
+  port: 5000

@@ -72,3 +72,10 @@ project(":tridato-liquibase") {
 		compile('org.liquibase:liquibase-core')
 	}
 }
+
+project(":tridato-mock-response") {
+	dependencies {
+		compile('org.springframework.boot:spring-boot-starter-web')
+	}
+}
+
