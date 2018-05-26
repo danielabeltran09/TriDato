@@ -83,6 +83,7 @@ project(":td-mx-sipso") {
 		compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
 		compile('org.springframework.boot:spring-boot-starter-web')
 		compile group: 'org.jsoup', name: 'jsoup', version: '1.7.2'
+		compile project(':td-commons')
 	}
 }
 
