@@ -19,8 +19,6 @@ version = '0.0.1-SNAPSHOT'
 subprojects {
 
 	apply plugin: 'java'
-	apply plugin: 'eclipse'
-	apply plugin: 'org.springframework.boot'
 	apply plugin: 'io.spring.dependency-management'
 
 	repositories {
@@ -39,6 +37,9 @@ subprojects {
 project(":td-commons") {
 	dependencies {
 		compile('net.sourceforge.tess4j:tess4j:3.2.1')
+		compile 'com.squareup.okhttp3:okhttp:3.10.0'
+		compile 'org.jsoup:jsoup:1.11.3'
+		implementation 'com.google.code.gson:gson:2.8.4'
 	}
 }
 
@@ -49,6 +50,35 @@ project(":tridato-eureka") {
 }
 
 project(":tridato-co-police") {
+	apply plugin: 'org.springframework.boot'
+	dependencies {
+		compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
+		compile('org.springframework.boot:spring-boot-starter-web')
+		compile group: 'org.jsoup', name: 'jsoup', version: '1.7.2'
+		compile project(':td-commons')
+	}
+}
+
+project(":tridato-co-mintransporte") {
+	dependencies {
+		compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
+		compile('org.springframework.boot:spring-boot-starter-web')
+		compile project(':td-commons')
+		compile 'org.jsoup:jsoup:1.11.3'
+	}
+}
+
+project(":tridato-co-aguascalientes") {
+	dependencies {
+		compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
+		compile('org.springframework.boot:spring-boot-starter-web')
+		compile project(':td-commons')
+		compile 'org.jsoup:jsoup:1.11.3'
+	}
+}
+
+project(":td-mx-sipso") {
+	apply plugin: 'org.springframework.boot'
 	dependencies {
 		compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
 		compile('org.springframework.boot:spring-boot-starter-web')
@@ -58,18 +88,11 @@ project(":tridato-co-police") {
 }
 
 project(":tridato-zuul") {
+	apply plugin: 'org.springframework.boot'
 	dependencies {
 		compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
 		compile('org.springframework.boot:spring-boot-starter-web')
 		compile('org.springframework.cloud:spring-cloud-starter-netflix-zuul')
-	}
-}
-
-project(":tridato-liquibase") {
-	dependencies {
-        compile('org.springframework.boot:spring-boot-starter-web')
-        runtime('mysql:mysql-connector-java')
-		compile('org.liquibase:liquibase-core')
 	}
 }
 
