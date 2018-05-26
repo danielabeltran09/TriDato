@@ -34,7 +34,7 @@ zuul:
       serviceId: tridato-co-mintransporte
     aguascalientes:
       path: /aguascalientes/**
-      serviceId: tridato-co-aguascalientes
+      serviceId: tridato-mx-aguascalientes
 
 tridato-co-police:
   ribbon:

@@ -97,6 +97,7 @@ project(":tridato-zuul") {
 }
 
 project(":tridato-mock-response") {
+	apply plugin: 'org.springframework.boot'
 	dependencies {
 		compile('org.springframework.boot:spring-boot-starter-web')
 	}
