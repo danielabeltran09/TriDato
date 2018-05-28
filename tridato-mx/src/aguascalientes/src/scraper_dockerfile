@@ -1,0 +1,13 @@
+FROM golang:latest
+RUN mkdir /app
+RUN mkdir /app/src
+ADD . /app/src
+WORKDIR /app/src
+ENV GOPATH "/app/"
+RUN go get github.com/PuerkitoBio/goquery
+RUN go get github.com/jinzhu/gorm
+RUN go get github.com/jinzhu/gorm/dialects/mysql
+RUN go get gopkg.in/cheggaaa/pb.v1
+RUN cd /app/src
+RUN go build main.go
+CMD ["./main"]
