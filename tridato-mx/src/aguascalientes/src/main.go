@@ -16,7 +16,7 @@ import (
 
 func main() {
 	time.Sleep(time.Second * 30)
-	db, err := gorm.Open("mysql", "username:password@(172.19.0.2:3306)/dev?charset=utf8&parseTime=True&loc=Local")
+	db, err := gorm.Open("mysql", "username:password@tcp(database:3306)/dev?charset=utf8&parseTime=True&loc=Local")
 	if err != nil {
 		log.Println("ERROR CONNECTING DB ", err)
 		log.Fatal("Shutting Down")
