@@ -16,13 +16,11 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8070/eureka/
+      defaultZone: http://trudata-eureka.us-east-2.elasticbeanstalk.com/eureka
     registerWithEureka: true
+    fetchRegistry: true
   instance:
-    hostname: localhost
-
-server:
-    port: 8765
+    preferIpAddress: false
 
 zuul:
   routes:
@@ -35,6 +33,9 @@ zuul:
     aguascalientes:
       path: /aguascalientes/**
       serviceId: tridato-mx-aguascalientes
+    sipso:
+      path: /sipso/**
+      serviceId: tridato-mx-sipso
 
 tridato-co-police:
   ribbon:
@@ -51,3 +52,11 @@ tridato-mx-aguascalientes:
     eureka:
       enabled: true
     ServerListRefreshInterval: 1000
+
+tridato-mx-sipso:
+  ribbon:
+    eureka:
+      enabled: true
+    ServerListRefreshInterval: 1000
+
+

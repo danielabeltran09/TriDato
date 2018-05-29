@@ -1,0 +1,102 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+   http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="LIFIT-0.0.0-DB-TAG" author="camilo.daniela">
+        <tagDatabase tag="TAG_0.0.0" />
+    </changeSet>
+
+    <changeSet id="CREATE-TABLE-USER" author="camilo.daniela">
+        <createTable tableName="user" schemaName="lifit">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable schemaName="lf" tableName="user"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="CREATE-TABLE-COMPANY" author="camilo.daniela">
+        <createTable tableName="company" schemaName="lifit">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable schemaName="lf" tableName="company"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="CREATE-TABLE-COURIER" author="camilo.daniela">
+        <createTable tableName="courier" schemaName="lifit">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable schemaName="lf" tableName="courier"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="CREATE-TABLE-CONSUMER" author="camilo.daniela">
+        <createTable tableName="consumer" schemaName="lifit">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable schemaName="lf" tableName="consumer"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="CREATE-TABLE-PRODUCT" author="camilo.daniela">
+        <createTable tableName="product" schemaName="lifit">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable schemaName="lf" tableName="product"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="CREATE-TABLE-PROMOTION" author="camilo.daniela">
+        <createTable tableName="promotion" schemaName="lifit">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable schemaName="lf" tableName="promotion"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="CREATE-TABLE-CATEGORY" author="camilo.daniela">
+        <createTable tableName="category" schemaName="lifit">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable schemaName="lf" tableName="category"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="CREATE-TABLE-ORDER" author="camilo.daniela">
+        <createTable tableName="order" schemaName="lifit">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable schemaName="lf" tableName="order"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>
