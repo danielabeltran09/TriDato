@@ -23,7 +23,7 @@ public class MockService {
         return "Mock is alive ";
     }
 
-    @CrossOrigin(origins = "http://trudata-live.s3-website.us-east-2.amazonaws.com")
+    @CrossOrigin(origins = {"http://trudata-live.s3-website.us-east-2.amazonaws.com", "http://localhost:3000"})
     @GetMapping(value = "/query/{id}", produces = "application/json; charset=utf-8")
     @ResponseBody
     public ApiResponse query(@PathVariable("id") final String id) throws IOException {

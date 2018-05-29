@@ -11,10 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 
@@ -37,6 +34,7 @@ public class MexicoSipsoService {
         return ResponseEntity.ok().build();
     }
 
+    @CrossOrigin(origins = { "http://trudata-live.s3-website.us-east-2.amazonaws.com", "http://localhost:3000"})
     @GetMapping(path = "/query/{curp}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ApiResponse> query(@PathVariable("curp") final String queriedCurp) throws IOException {
 
@@ -51,6 +49,7 @@ public class MexicoSipsoService {
                 .withBirthdayEntity(getTextFromSelector(curpDocument, SipsoSelector.BIRTHDAY_ENTITY)));
     }
 
+    @CrossOrigin(origins = {"http://trudata-live.s3-website.us-east-2.amazonaws.com", "http://localhost:3000"})
     @GetMapping("/query/{curp}/name/{name}")
     public ResponseEntity<ApiResponse> query(
             @PathVariable("curp") final String queriedCurp,
