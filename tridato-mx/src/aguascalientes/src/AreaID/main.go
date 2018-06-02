@@ -40,6 +40,10 @@ func GetGrupoMateriasPorAreaID(code int) ([]int, error) {
 	req.Header.Add("X-Requested-With", "XMLHttpRequest")
 	req.Header.Add("Connection", "keep-alive")
 
+	// var client http.Client = http.Client{
+	// 	Timeout: time.Duration(time.Second * 20),
+	// }
+
 	res, err := http.DefaultClient.Do(req)
 	if err != nil {
 		log.Printf("Error making POST request in AreaID, code: %d, res: %s \n", code, res)
