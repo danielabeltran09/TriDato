@@ -23,6 +23,25 @@ public class ResponseTridato {
 
         return "";
     }
+
+    public static String fail(int code, String message, String info){
+        code = code * -1;
+        Gson gson = new Gson();
+        try {
+            String data = "";
+            if(!info.isEmpty())
+                data = gson.toJson(info);
+            Answer answer=new Answer(code,message,data);
+            String r =  gson.toJson(answer);
+            System.out.println(r);
+            return r;
+        } catch (Exception e) {
+            new Exception("info no valida", e.getCause());
+        }
+
+
+        return "";
+    }
 }
 
 class Answer{
