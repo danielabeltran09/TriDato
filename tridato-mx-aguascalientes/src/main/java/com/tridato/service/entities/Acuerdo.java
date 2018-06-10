@@ -15,33 +15,27 @@ public class Acuerdo {
     private String Documento;
     private String Naturaleza;
     private String Partes;
+    private String PermisoVerTexto;
     private String Extracto;
-    private boolean PermisoVerTexto;
     private int TipoAcuerdoID;
     private String FechaPublicacion;
     private String FecDictado;
-    private boolean Editar;
-    private String DescripcionClasificacion;
-    private boolean Publicado;
 
     protected Acuerdo() {
     }
 
-    public Acuerdo(int acuerdoID, int numero, int areaID, String documento, String naturaleza, String partes, String extracto, boolean permisoVerTexto, int tipoAcuerdoID, String fechaPublicacion, String fecDictado, boolean editar, String descripcionClasificacion, boolean publicado) {
+    public Acuerdo(int acuerdoID, int numero, int areaID, String documento, String naturaleza, String partes, String permisoVerTexto, String extracto, int tipoAcuerdoID, String fechaPublicacion, String fecDictado) {
         AcuerdoID = acuerdoID;
         Numero = numero;
         AreaID = areaID;
         Documento = documento;
         Naturaleza = naturaleza;
         Partes = partes;
-        Extracto = extracto;
         PermisoVerTexto = permisoVerTexto;
+        Extracto = extracto;
         TipoAcuerdoID = tipoAcuerdoID;
         FechaPublicacion = fechaPublicacion;
         FecDictado = fecDictado;
-        Editar = editar;
-        DescripcionClasificacion = descripcionClasificacion;
-        Publicado = publicado;
     }
 
     public int getAcuerdoID() {
@@ -92,20 +86,20 @@ public class Acuerdo {
         Partes = partes;
     }
 
+    public String getPermisoVerTexto() {
+        return PermisoVerTexto;
+    }
+
+    public void setPermisoVerTexto(String permisoVerTexto) {
+        PermisoVerTexto = permisoVerTexto;
+    }
+
     public String getExtracto() {
         return Extracto;
     }
 
     public void setExtracto(String extracto) {
         Extracto = extracto;
-    }
-
-    public boolean isPermisoVerTexto() {
-        return PermisoVerTexto;
-    }
-
-    public void setPermisoVerTexto(boolean permisoVerTexto) {
-        PermisoVerTexto = permisoVerTexto;
     }
 
     public int getTipoAcuerdoID() {
@@ -130,29 +124,5 @@ public class Acuerdo {
 
     public void setFecDictado(String fecDictado) {
         FecDictado = fecDictado;
-    }
-
-    public boolean isEditar() {
-        return Editar;
-    }
-
-    public void setEditar(boolean editar) {
-        Editar = editar;
-    }
-
-    public String getDescripcionClasificacion() {
-        return DescripcionClasificacion;
-    }
-
-    public void setDescripcionClasificacion(String descripcionClasificacion) {
-        DescripcionClasificacion = descripcionClasificacion;
-    }
-
-    public boolean getPublicado() {
-        return Publicado;
-    }
-
-    public void setPublicado(boolean publicado) {
-        Publicado = publicado;
     }
 }

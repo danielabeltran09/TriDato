@@ -38,7 +38,7 @@ public class AguasCalientesService {
     public String get( @PathVariable("curp") final String curp ){
         System.out.println("Ingresando a get");
         //Busco en la bd ese nombres
-        List<Acuerdo> acuerdos = em.createNativeQuery("SELECT * from aguascalientes_acuerdos where partes like '"+curp+"'").getResultList();
+        List<Acuerdo> acuerdos = em.createNativeQuery("SELECT * from aguascalientes_acuerdos where partes like '%"+curp+"%'").getResultList();
         if(acuerdos.size()>0){
             //return ResponseEntity.ok();
             return ResponseTridato.fail(1,"Se encontro información", acuerdos.size()+"");
